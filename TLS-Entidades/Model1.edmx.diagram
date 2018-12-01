@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7b2ebf9c86524a829e84a44364395c2f" Name="Diagram1">
+        <EntityTypeShape EntityType="ATLSModel.Participantes" Width="1.5" PointX="6.625" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ATLSModel.Proyecto" Width="1.5" PointX="4.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ATLSModel.sysdiagrams" Width="1.5" PointX="3.375" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ATLSModel.Usuario" Width="1.5" PointX="0.625" PointY="2" IsExpanded="true" />
+        <AssociationConnector Association="ATLSModel.FK_UsuariosProyectos_Proyecto" ManuallyRouted="false" />
+        <AssociationConnector Association="ATLSModel.FK_UsuariosProyectos_Usuario" ManuallyRouted="false" />
+        <AssociationConnector Association="ATLSModel.FK_Proyecto_Usuario" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
