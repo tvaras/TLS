@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="866c6963-82eb-4044-bb4e-84ab47c9ec85" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:9902/SRV_Proyecto.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="SRV_Proyecto.xsd" MetadataType="Schema" ID="72279189-2e83-41da-8143-6c1300915367" SourceId="1" SourceUrl="http://localhost:9902/SRV_Proyecto.svc?xsd=xsd1" />
+    <MetadataFile FileName="SRV_Proyecto.wsdl" MetadataType="Wsdl" ID="592b25d5-7caf-4d87-8b4b-3cff3b05ead1" SourceId="1" SourceUrl="http://localhost:9902/SRV_Proyecto.svc?wsdl" />
+    <MetadataFile FileName="SRV_Proyecto1.xsd" MetadataType="Schema" ID="0264f324-c917-4e16-83ab-5a0f1e61457b" SourceId="1" SourceUrl="http://localhost:9902/SRV_Proyecto.svc?xsd=xsd0" />
+    <MetadataFile FileName="SRV_Proyecto2.xsd" MetadataType="Schema" ID="a44d20d5-c684-458f-81e5-75462ef45d3e" SourceId="1" SourceUrl="http://localhost:9902/SRV_Proyecto.svc?xsd=xsd2" />
+    <MetadataFile FileName="SRV_Proyecto.disco" MetadataType="Disco" ID="3ea8f260-53ec-4668-a746-7c055316059a" SourceId="1" SourceUrl="http://localhost:9902/SRV_Proyecto.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

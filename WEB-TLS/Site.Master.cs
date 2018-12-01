@@ -13,5 +13,10 @@ namespace WEB_TLS
         {
 
         }
+
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/FRM_Login?msg=200");
+        }
     }
 }

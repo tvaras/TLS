@@ -11,7 +11,17 @@ namespace WEB_TLS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsPostBack)
+            {
+                if (Session["CURRENT_USER"] != null)
+                {
+                    lblUsuarioConectado.Text = ((SVR_Login.UsuarioLogin)Session["CURRENT_USER"]).alias;
+                }
+                else
+                {
+                    Response.Redirect("~/FRM_Login");
+                }
+            }
         }
     }
 }

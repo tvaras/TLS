@@ -17,5 +17,8 @@ namespace WCF_TLS
 
         [OperationContract]
         ResultadoDTO CrearNuevoProyecto(string nombreP, DateTime fechaC, bool activo, int idUsuario);
+
+        [OperationContract]
+        List<ProyectoDTO> listarProyectos();
     }
 }

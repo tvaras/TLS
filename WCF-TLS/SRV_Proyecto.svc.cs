@@ -14,6 +14,8 @@ namespace WCF_TLS
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione SRV_Proyecto.svc o SRV_Proyecto.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class SRV_Proyecto : ISRV_Proyecto
     {
+        ProyectoNegocio pNeg = new ProyectoNegocio();
+
         public ResultadoDTO CrearProyecto(string nombreP, DateTime fechaC, bool activo, int idUsuario)
         {
             Proyecto proyecto = new Proyecto()
@@ -21,8 +23,7 @@ namespace WCF_TLS
                 fechaCreacion = fechaC,
                 activo = activo,
                 creadoPor = idUsuario};
-
-            ProyectoNegocio pNeg = new ProyectoNegocio();
+            
             ResultadoDTO r = new ResultadoDTO();
 
             r = pNeg.CrearProyecto(proyecto);
@@ -39,13 +40,18 @@ namespace WCF_TLS
                 activo = activo,
                 creadoPor = idUsuario
             };
-
-            ProyectoNegocio pNeg = new ProyectoNegocio();
+            
             ResultadoDTO r = new ResultadoDTO();
 
             r = pNeg.CrearNuevoProyecto(proyecto);
 
             return r;
         }
+
+        public List<ProyectoDTO> listarProyectos()
+        {
+            return pNeg.listarProyectos();
+        }
+    
     }
 }

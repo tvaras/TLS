@@ -10,6 +10,10 @@ namespace TLS_Negocio
 {
     public class ProyectoNegocio
     {
+
+        ProyectoDAL proyectoDAL = new ProyectoDAL();
+        ParticipantesDAL participantesDAL = new ParticipantesDAL();
+
         /// <summary>
         /// en este método creo el proyecto y el participante en una solo instrucción de guardado
         /// </summary>
@@ -18,13 +22,12 @@ namespace TLS_Negocio
         public ResultadoDTO CrearProyecto(Proyecto dto)
         {
             ResultadoDTO r = new ResultadoDTO();
-
-            ProyectoDAL pDAL = new ProyectoDAL();
+            
             Participantes participantes = new Participantes();
             participantes.idUsuario = dto.creadoPor;
             participantes.administrador = 1;
             dto.Participantes.Add(participantes);
-            r = pDAL.Crear(dto);
+            r = proyectoDAL.Crear(dto);
             return r;
 
         }
@@ -39,9 +42,6 @@ namespace TLS_Negocio
             ResultadoDTO r = new ResultadoDTO();
             ResultadoDTO rProyecto = new ResultadoDTO();
             ResultadoDTO rParticipante = new ResultadoDTO();
-
-            ProyectoDAL proyectoDAL = new ProyectoDAL();
-            ParticipantesDAL participantesDAL = new ParticipantesDAL(); 
 
             //creo el proyecto y rescato su id de creación           
             rProyecto = proyectoDAL.Crear(dto);
@@ -69,6 +69,9 @@ namespace TLS_Negocio
 
         }
 
-
+        public List<ProyectoDTO> listarProyectos()
+        {
+            return proyectoDAL.listarProyectos();
+        }
     }
 }
