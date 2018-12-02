@@ -20,5 +20,14 @@ namespace WCF_TLS
 
         [OperationContract]
         List<ProyectoDTO> listarProyectos();
+
+        [OperationContract]
+        List<UsuarioDTO> listarUsuariosNoAsignados(int idProyecto);
+
+        [OperationContract]
+        bool eliminarParticipante(ParticipanteDTO dto);
+
+        [OperationContract]
+        bool asignarParticipante(ParticipanteDTO dto);
     }
 }

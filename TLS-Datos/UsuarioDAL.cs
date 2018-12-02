@@ -28,6 +28,26 @@ namespace TLS_Datos
             return r;
         }
 
+        public List<UsuarioDTO> listarUsuariosNoAsignados(int idProyecto)
+        {
+            List<UsuarioDTO> lista = new List<UsuarioDTO>();
+            using (ATLSEntities dbo = new ATLSEntities())
+            {
+                lista = (from u in dbo.Usuario
+                         where !(from e2 in dbo.Participantes
+                              where e2.idProyecto == idProyecto
+                                 select e2.idUsuario).ToList().Contains(u.idUsuario)
+                        select
+                         new UsuarioDTO {
+                             idUsuario = u.idUsuario,
+                             nombreUsuario = u.nombreUsuario,
+                             alias = u.alias,
+                             clave = u.clave
+                         }).ToList();
+            }
+            return lista;
+        }
+
         public Usuario Buscar(Usuario user) {
             Usuario usuario = new Usuario();
             using (ATLSEntities dbo = new ATLSEntities()) {

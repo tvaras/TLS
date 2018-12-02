@@ -18,5 +18,10 @@ namespace TLS_Negocio
         public Usuario Buscar(string user, string clave) {
             return userDal.Buscar(user, clave);
         }
+
+        public List<UsuarioDTO> listarUsuariosNoAsignados(int idProyecto)
+        {
+            return userDal.listarUsuariosNoAsignados(idProyecto);
+        }
     }
 }

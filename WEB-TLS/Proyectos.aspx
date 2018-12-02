@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="Proyectos" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Proyectos.aspx.cs" Inherits="WEB_TLS.Proyectos" %>
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-<div class="row">
+    <div class="row">
     <h1>Proyectos</h1>
 </div>
 <div class="row">

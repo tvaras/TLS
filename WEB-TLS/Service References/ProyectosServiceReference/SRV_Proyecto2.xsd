@@ -25,4 +25,28 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ProyectoDTO" nillable="true" type="tns:ProyectoDTO" />
+  <xs:complexType name="ArrayOfUsuarioDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UsuarioDTO" nillable="true" type="tns:UsuarioDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUsuarioDTO" nillable="true" type="tns:ArrayOfUsuarioDTO" />
+  <xs:complexType name="UsuarioDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="clave" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="idUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreUsuario" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UsuarioDTO" nillable="true" type="tns:UsuarioDTO" />
+  <xs:complexType name="ParticipanteDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="administrador" type="xs:int" />
+      <xs:element minOccurs="0" name="idParticipante" type="xs:int" />
+      <xs:element minOccurs="0" name="idProyecto" type="xs:int" />
+      <xs:element minOccurs="0" name="idUsuario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ParticipanteDTO" nillable="true" type="tns:ParticipanteDTO" />
 </xs:schema>

@@ -148,8 +148,10 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Participantes.aspx" />
     <Content Include="Properties\DataSources\TLS_Entidades.ResultadoDTO.datasource" />
     <Content Include="Properties\DataSources\TLS_Entidades.ProyectoDTO.datasource" />
+    <Content Include="Properties\DataSources\TLS_Entidades.UsuarioDTO.datasource" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="FRM_Login.aspx" />
     <Content Include="Proyectos.aspx" />
@@ -258,6 +260,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Participantes.aspx.cs">
+      <DependentUpon>Participantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Participantes.aspx.designer.cs">
+      <DependentUpon>Participantes.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proyectos.aspx.cs">

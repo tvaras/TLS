@@ -15,6 +15,7 @@ namespace WCF_TLS
     public class SRV_Proyecto : ISRV_Proyecto
     {
         ProyectoNegocio pNeg = new ProyectoNegocio();
+        UsuarioNegocio uNeg = new UsuarioNegocio();
 
         public ResultadoDTO CrearProyecto(string nombreP, DateTime fechaC, bool activo, int idUsuario)
         {
@@ -52,6 +53,21 @@ namespace WCF_TLS
         {
             return pNeg.listarProyectos();
         }
-    
+
+        public List<UsuarioDTO> listarUsuariosNoAsignados(int idProyecto) {
+
+            return uNeg.listarUsuariosNoAsignados(idProyecto);
+        }
+
+        public bool eliminarParticipante(ParticipanteDTO dto)
+        {
+            return pNeg.eliminarParticipante(dto);
+        }
+
+        public bool asignarParticipante(ParticipanteDTO dto) {
+
+            return pNeg.asignarParticipante(dto);
+        }
+
     }
 }

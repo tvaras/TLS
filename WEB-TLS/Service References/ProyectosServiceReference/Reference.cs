@@ -32,6 +32,24 @@ namespace WEB_TLS.ProyectosServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISRV_Proyecto/listarProyectos", ReplyAction="http://tempuri.org/ISRV_Proyecto/listarProyectosResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<TLS_Entidades.ProyectoDTO>> listarProyectosAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISRV_Proyecto/listarUsuariosNoAsignados", ReplyAction="http://tempuri.org/ISRV_Proyecto/listarUsuariosNoAsignadosResponse")]
+        System.Collections.Generic.List<TLS_Entidades.UsuarioDTO> listarUsuariosNoAsignados(int idProyecto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISRV_Proyecto/listarUsuariosNoAsignados", ReplyAction="http://tempuri.org/ISRV_Proyecto/listarUsuariosNoAsignadosResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<TLS_Entidades.UsuarioDTO>> listarUsuariosNoAsignadosAsync(int idProyecto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISRV_Proyecto/eliminarParticipante", ReplyAction="http://tempuri.org/ISRV_Proyecto/eliminarParticipanteResponse")]
+        bool eliminarParticipante(TLS_Entidades.ParticipanteDTO dto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISRV_Proyecto/eliminarParticipante", ReplyAction="http://tempuri.org/ISRV_Proyecto/eliminarParticipanteResponse")]
+        System.Threading.Tasks.Task<bool> eliminarParticipanteAsync(TLS_Entidades.ParticipanteDTO dto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISRV_Proyecto/asignarParticipante", ReplyAction="http://tempuri.org/ISRV_Proyecto/asignarParticipanteResponse")]
+        bool asignarParticipante(TLS_Entidades.ParticipanteDTO dto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISRV_Proyecto/asignarParticipante", ReplyAction="http://tempuri.org/ISRV_Proyecto/asignarParticipanteResponse")]
+        System.Threading.Tasks.Task<bool> asignarParticipanteAsync(TLS_Entidades.ParticipanteDTO dto);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -83,6 +101,30 @@ namespace WEB_TLS.ProyectosServiceReference {
         
         public System.Threading.Tasks.Task<System.Collections.Generic.List<TLS_Entidades.ProyectoDTO>> listarProyectosAsync() {
             return base.Channel.listarProyectosAsync();
+        }
+        
+        public System.Collections.Generic.List<TLS_Entidades.UsuarioDTO> listarUsuariosNoAsignados(int idProyecto) {
+            return base.Channel.listarUsuariosNoAsignados(idProyecto);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<TLS_Entidades.UsuarioDTO>> listarUsuariosNoAsignadosAsync(int idProyecto) {
+            return base.Channel.listarUsuariosNoAsignadosAsync(idProyecto);
+        }
+        
+        public bool eliminarParticipante(TLS_Entidades.ParticipanteDTO dto) {
+            return base.Channel.eliminarParticipante(dto);
+        }
+        
+        public System.Threading.Tasks.Task<bool> eliminarParticipanteAsync(TLS_Entidades.ParticipanteDTO dto) {
+            return base.Channel.eliminarParticipanteAsync(dto);
+        }
+        
+        public bool asignarParticipante(TLS_Entidades.ParticipanteDTO dto) {
+            return base.Channel.asignarParticipante(dto);
+        }
+        
+        public System.Threading.Tasks.Task<bool> asignarParticipanteAsync(TLS_Entidades.ParticipanteDTO dto) {
+            return base.Channel.asignarParticipanteAsync(dto);
         }
     }
 }

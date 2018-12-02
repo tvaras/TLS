@@ -47,4 +47,46 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="listarUsuariosNoAsignados">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="idProyecto" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="listarUsuariosNoAsignadosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/TLS_Entidades" minOccurs="0" name="listarUsuariosNoAsignadosResult" nillable="true" type="q4:ArrayOfUsuarioDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eliminarParticipante">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/TLS_Entidades" minOccurs="0" name="dto" nillable="true" type="q5:ParticipanteDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="eliminarParticipanteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="eliminarParticipanteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="asignarParticipante">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/TLS_Entidades" minOccurs="0" name="dto" nillable="true" type="q6:ParticipanteDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="asignarParticipanteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="asignarParticipanteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

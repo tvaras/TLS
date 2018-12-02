@@ -22,7 +22,7 @@ namespace TLS_Negocio
         public ResultadoDTO CrearProyecto(Proyecto dto)
         {
             ResultadoDTO r = new ResultadoDTO();
-            
+
             Participantes participantes = new Participantes();
             participantes.idUsuario = dto.creadoPor;
             participantes.administrador = 1;
@@ -45,33 +45,43 @@ namespace TLS_Negocio
 
             //creo el proyecto y rescato su id de creación           
             rProyecto = proyectoDAL.Crear(dto);
-            
+
             //Instancio el participante y le paso sus datos
             Participantes participantes = new Participantes();
             participantes.idUsuario = dto.creadoPor;
             participantes.administrador = 1;
 
             //le asigno al participante el id del pryecto que se acba de crear
-            participantes.idProyecto = rProyecto.id??0;
+            participantes.idProyecto = rProyecto.id ?? 0;
             //guardo el participante en la BDD
             rParticipante = participantesDAL.Crea(participantes);
 
             //si ninguna de las inserciones da error,  indico que no hay error
-            if(!rProyecto.error  && !rParticipante.error)
+            if (!rProyecto.error && !rParticipante.error)
             { r.error = false; }
             else
             {
                 r.error = true;
                 r.mensaje = "se ha producido un error al insertar";
             }
-           
+
             return r;
 
+        }
+
+        public bool asignarParticipante(ParticipanteDTO dto)
+        {
+            return participantesDAL.asignarParticipante(dto);
         }
 
         public List<ProyectoDTO> listarProyectos()
         {
             return proyectoDAL.listarProyectos();
+        }
+
+        public bool eliminarParticipante(ParticipanteDTO dto)
+        {
+            return participantesDAL.eliminarParticipante(dto);
         }
     }
 }

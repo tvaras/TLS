@@ -25,6 +25,24 @@
   <wsdl:message name="ISRV_Proyecto_listarProyectos_OutputMessage">
     <wsdl:part name="parameters" element="tns:listarProyectosResponse" />
   </wsdl:message>
+  <wsdl:message name="ISRV_Proyecto_listarUsuariosNoAsignados_InputMessage">
+    <wsdl:part name="parameters" element="tns:listarUsuariosNoAsignados" />
+  </wsdl:message>
+  <wsdl:message name="ISRV_Proyecto_listarUsuariosNoAsignados_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listarUsuariosNoAsignadosResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISRV_Proyecto_eliminarParticipante_InputMessage">
+    <wsdl:part name="parameters" element="tns:eliminarParticipante" />
+  </wsdl:message>
+  <wsdl:message name="ISRV_Proyecto_eliminarParticipante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:eliminarParticipanteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISRV_Proyecto_asignarParticipante_InputMessage">
+    <wsdl:part name="parameters" element="tns:asignarParticipante" />
+  </wsdl:message>
+  <wsdl:message name="ISRV_Proyecto_asignarParticipante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:asignarParticipanteResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISRV_Proyecto">
     <wsdl:operation name="CrearProyecto">
       <wsdl:input wsaw:Action="http://tempuri.org/ISRV_Proyecto/CrearProyecto" message="tns:ISRV_Proyecto_CrearProyecto_InputMessage" />
@@ -37,6 +55,18 @@
     <wsdl:operation name="listarProyectos">
       <wsdl:input wsaw:Action="http://tempuri.org/ISRV_Proyecto/listarProyectos" message="tns:ISRV_Proyecto_listarProyectos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISRV_Proyecto/listarProyectosResponse" message="tns:ISRV_Proyecto_listarProyectos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listarUsuariosNoAsignados">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISRV_Proyecto/listarUsuariosNoAsignados" message="tns:ISRV_Proyecto_listarUsuariosNoAsignados_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISRV_Proyecto/listarUsuariosNoAsignadosResponse" message="tns:ISRV_Proyecto_listarUsuariosNoAsignados_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="eliminarParticipante">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISRV_Proyecto/eliminarParticipante" message="tns:ISRV_Proyecto_eliminarParticipante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISRV_Proyecto/eliminarParticipanteResponse" message="tns:ISRV_Proyecto_eliminarParticipante_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="asignarParticipante">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISRV_Proyecto/asignarParticipante" message="tns:ISRV_Proyecto_asignarParticipante_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISRV_Proyecto/asignarParticipanteResponse" message="tns:ISRV_Proyecto_asignarParticipante_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISRV_Proyecto" type="tns:ISRV_Proyecto">
@@ -61,6 +91,33 @@
     </wsdl:operation>
     <wsdl:operation name="listarProyectos">
       <soap:operation soapAction="http://tempuri.org/ISRV_Proyecto/listarProyectos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listarUsuariosNoAsignados">
+      <soap:operation soapAction="http://tempuri.org/ISRV_Proyecto/listarUsuariosNoAsignados" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarParticipante">
+      <soap:operation soapAction="http://tempuri.org/ISRV_Proyecto/eliminarParticipante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="asignarParticipante">
+      <soap:operation soapAction="http://tempuri.org/ISRV_Proyecto/asignarParticipante" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
