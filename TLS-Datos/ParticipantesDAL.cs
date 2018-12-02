@@ -64,5 +64,51 @@ namespace TLS_Datos
                 return true;
             }
         }
+
+        public ParticipanteDTO buscarParticipante(int idParticipante)
+        {
+            ParticipanteDTO entidad = new ParticipanteDTO();
+            using (ATLSEntities dbo = new ATLSEntities())
+            {
+                entidad = (from par in dbo.Participantes
+                         join pro in dbo.Proyecto on par.idProyecto equals pro.idProyecto
+                         join usu in dbo.Usuario on par.idUsuario equals usu.idUsuario
+                         where par.idParticipante == idParticipante
+                         select
+                          new ParticipanteDTO
+                          {
+                              idUsuario = usu.idUsuario,
+                              nombreProyecto = pro.nombreProyecto,
+                              alias = usu.alias,
+                              idParticipante = par.idParticipante,
+                              idProyecto = pro.idProyecto,
+                              administrador = par.administrador
+                          }).FirstOrDefault<ParticipanteDTO>();
+            }
+            return entidad;
+        }
+
+        public List<ParticipanteDTO> listarParticipantesAsignados(int idProyecto)
+        {
+            List<ParticipanteDTO> lista = new List<ParticipanteDTO>();
+            using (ATLSEntities dbo = new ATLSEntities())
+            {
+                lista = (from par in dbo.Participantes
+                         join pro in dbo.Proyecto on par.idProyecto equals pro.idProyecto
+                         join usu in dbo.Usuario on par.idUsuario equals usu.idUsuario
+                         where par.idProyecto == idProyecto
+                         select
+                          new ParticipanteDTO
+                          {
+                              idUsuario = usu.idUsuario,
+                              nombreProyecto = pro.nombreProyecto,
+                              alias = usu.alias,
+                              idParticipante = par.idParticipante,
+                              idProyecto = pro.idProyecto,
+                              administrador = par.administrador
+                          }).ToList();
+            }
+            return lista;
+        }
     }
 }

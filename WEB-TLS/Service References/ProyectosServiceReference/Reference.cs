@@ -39,17 +39,23 @@ namespace WEB_TLS.ProyectosServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISRV_Proyecto/listarUsuariosNoAsignados", ReplyAction="http://tempuri.org/ISRV_Proyecto/listarUsuariosNoAsignadosResponse")]
         System.Threading.Tasks.Task<System.Collections.Generic.List<TLS_Entidades.UsuarioDTO>> listarUsuariosNoAsignadosAsync(int idProyecto);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISRV_Proyecto/eliminarParticipante", ReplyAction="http://tempuri.org/ISRV_Proyecto/eliminarParticipanteResponse")]
-        bool eliminarParticipante(TLS_Entidades.ParticipanteDTO dto);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISRV_Proyecto/eliminarParticipante", ReplyAction="http://tempuri.org/ISRV_Proyecto/eliminarParticipanteResponse")]
-        System.Threading.Tasks.Task<bool> eliminarParticipanteAsync(TLS_Entidades.ParticipanteDTO dto);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISRV_Proyecto/asignarParticipante", ReplyAction="http://tempuri.org/ISRV_Proyecto/asignarParticipanteResponse")]
         bool asignarParticipante(TLS_Entidades.ParticipanteDTO dto);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISRV_Proyecto/asignarParticipante", ReplyAction="http://tempuri.org/ISRV_Proyecto/asignarParticipanteResponse")]
         System.Threading.Tasks.Task<bool> asignarParticipanteAsync(TLS_Entidades.ParticipanteDTO dto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISRV_Proyecto/listarParticipantesAsignados", ReplyAction="http://tempuri.org/ISRV_Proyecto/listarParticipantesAsignadosResponse")]
+        System.Collections.Generic.List<TLS_Entidades.ParticipanteDTO> listarParticipantesAsignados(int idProyecto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISRV_Proyecto/listarParticipantesAsignados", ReplyAction="http://tempuri.org/ISRV_Proyecto/listarParticipantesAsignadosResponse")]
+        System.Threading.Tasks.Task<System.Collections.Generic.List<TLS_Entidades.ParticipanteDTO>> listarParticipantesAsignadosAsync(int idProyecto);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISRV_Proyecto/eliminarParticipante", ReplyAction="http://tempuri.org/ISRV_Proyecto/eliminarParticipanteResponse")]
+        bool eliminarParticipante(int idParticipante);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISRV_Proyecto/eliminarParticipante", ReplyAction="http://tempuri.org/ISRV_Proyecto/eliminarParticipanteResponse")]
+        System.Threading.Tasks.Task<bool> eliminarParticipanteAsync(int idParticipante);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -111,20 +117,28 @@ namespace WEB_TLS.ProyectosServiceReference {
             return base.Channel.listarUsuariosNoAsignadosAsync(idProyecto);
         }
         
-        public bool eliminarParticipante(TLS_Entidades.ParticipanteDTO dto) {
-            return base.Channel.eliminarParticipante(dto);
-        }
-        
-        public System.Threading.Tasks.Task<bool> eliminarParticipanteAsync(TLS_Entidades.ParticipanteDTO dto) {
-            return base.Channel.eliminarParticipanteAsync(dto);
-        }
-        
         public bool asignarParticipante(TLS_Entidades.ParticipanteDTO dto) {
             return base.Channel.asignarParticipante(dto);
         }
         
         public System.Threading.Tasks.Task<bool> asignarParticipanteAsync(TLS_Entidades.ParticipanteDTO dto) {
             return base.Channel.asignarParticipanteAsync(dto);
+        }
+        
+        public System.Collections.Generic.List<TLS_Entidades.ParticipanteDTO> listarParticipantesAsignados(int idProyecto) {
+            return base.Channel.listarParticipantesAsignados(idProyecto);
+        }
+        
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<TLS_Entidades.ParticipanteDTO>> listarParticipantesAsignadosAsync(int idProyecto) {
+            return base.Channel.listarParticipantesAsignadosAsync(idProyecto);
+        }
+        
+        public bool eliminarParticipante(int idParticipante) {
+            return base.Channel.eliminarParticipante(idParticipante);
+        }
+        
+        public System.Threading.Tasks.Task<bool> eliminarParticipanteAsync(int idParticipante) {
+            return base.Channel.eliminarParticipanteAsync(idParticipante);
         }
     }
 }

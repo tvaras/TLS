@@ -59,14 +59,20 @@ namespace WCF_TLS
             return uNeg.listarUsuariosNoAsignados(idProyecto);
         }
 
-        public bool eliminarParticipante(ParticipanteDTO dto)
-        {
-            return pNeg.eliminarParticipante(dto);
-        }
-
         public bool asignarParticipante(ParticipanteDTO dto) {
 
             return pNeg.asignarParticipante(dto);
+        }
+
+        public List<ParticipanteDTO> listarParticipantesAsignados(int idProyecto)
+        {
+
+            return pNeg.listarParticipantesAsignados(idProyecto);
+        }
+
+        public bool eliminarParticipante(int idParticipante)
+        {
+            return pNeg.eliminarParticipante(idParticipante);
         }
 
     }

@@ -37,24 +37,51 @@ namespace WEB_TLS
             lista = service.listarProyectos();
             int idProyecto = lista[e.NewSelectedIndex].idProyecto;
             lblIdProyecto.Text = "" + idProyecto;
-
+            lblNombreProyecto.Text = lista[e.NewSelectedIndex].nombreProyecto;
             listarUsuarios(idProyecto);
+            listarParticipantes(idProyecto);
 
             Panel1.Visible = true;
         }
 
         protected void btnConfirmar_Click(object sender, EventArgs e)
         {
-            //int idUsuario = ((SVR_Login.UsuarioLogin)Session["CURRENT_USER"]).idUsuario;
-            //ResultadoDTO resultado = service.CrearNuevoProyecto(txtNombreProyecto.Text, DateTime.Now, true, idUsuario);
-            ParticipanteDTO dto = new ParticipanteDTO {
-                idProyecto = int.Parse(lblIdProyecto.Text),
-                idUsuario = int.Parse(cbParticipantes.SelectedValue),
-                administrador = (chkAdmin.Checked ? 1 : 0)
-            };
-            bool resultado = service.asignarParticipante(dto);
-            listarProyectos();
-            listarUsuarios(int.Parse(lblIdProyecto.Text));
+            if (cbParticipantes.SelectedIndex >= 0)
+            {
+                ParticipanteDTO dto = new ParticipanteDTO
+                {
+                    idProyecto = int.Parse(lblIdProyecto.Text),
+                    idUsuario = int.Parse(cbParticipantes.SelectedValue),
+                    administrador = (chkAdmin.Checked ? 1 : 0)
+                };
+                bool resultado = service.asignarParticipante(dto);
+                listarProyectos();
+                listarUsuarios(int.Parse(lblIdProyecto.Text));
+                listarParticipantes(int.Parse(lblIdProyecto.Text));
+            }
+            else {
+                lblMsg.Text = "Debe Seleccionar un Candidato Para Asignar";
+            }
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (lbAsignados.SelectedIndex >= 0)
+            {
+                int idParticipante = int.Parse(lbAsignados.SelectedValue);
+                bool resultado = service.eliminarParticipante(idParticipante);
+
+                if (resultado)
+                {
+
+                    listarUsuarios(int.Parse(lblIdProyecto.Text));
+                    listarParticipantes(int.Parse(lblIdProyecto.Text));
+                }
+            }
+            else
+            {
+                lblMsg.Text = "Debe Seleccionar un Participante asignado para eliminar";
+            }
         }
 
         void listarProyectos()
@@ -73,6 +100,16 @@ namespace WEB_TLS
             cbParticipantes.DataValueField = "idUsuario";
             cbParticipantes.DataTextField = "alias";
             cbParticipantes.DataBind();
+        }
+
+        void listarParticipantes(int idProyecto)
+        {
+
+            List<ParticipanteDTO> listaParticipantes = service.listarParticipantesAsignados(idProyecto);
+            lbAsignados.DataSource = Utils.ToDataTable<ParticipanteDTO>(listaParticipantes);
+            lbAsignados.DataValueField = "idParticipante";
+            lbAsignados.DataTextField = "alias";
+            lbAsignados.DataBind();
         }
     }
 }

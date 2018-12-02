@@ -74,6 +74,11 @@ namespace TLS_Negocio
             return participantesDAL.asignarParticipante(dto);
         }
 
+        public List<ParticipanteDTO> listarParticipantesAsignados(int idProyecto) {
+
+            return participantesDAL.listarParticipantesAsignados(idProyecto);
+        }
+
         public List<ProyectoDTO> listarProyectos()
         {
             return proyectoDAL.listarProyectos();
@@ -81,6 +86,12 @@ namespace TLS_Negocio
 
         public bool eliminarParticipante(ParticipanteDTO dto)
         {
+            return participantesDAL.eliminarParticipante(dto);
+        }
+
+        public bool eliminarParticipante(int idParticipante)
+        {
+            ParticipanteDTO dto = participantesDAL.buscarParticipante(idParticipante);
             return participantesDAL.eliminarParticipante(dto);
         }
     }

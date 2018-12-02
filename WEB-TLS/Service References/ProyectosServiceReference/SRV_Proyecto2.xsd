@@ -43,10 +43,18 @@
   <xs:complexType name="ParticipanteDTO">
     <xs:sequence>
       <xs:element minOccurs="0" name="administrador" type="xs:int" />
+      <xs:element minOccurs="0" name="alias" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="idParticipante" type="xs:int" />
       <xs:element minOccurs="0" name="idProyecto" type="xs:int" />
       <xs:element minOccurs="0" name="idUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="nombreProyecto" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ParticipanteDTO" nillable="true" type="tns:ParticipanteDTO" />
+  <xs:complexType name="ArrayOfParticipanteDTO">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ParticipanteDTO" nillable="true" type="tns:ParticipanteDTO" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfParticipanteDTO" nillable="true" type="tns:ArrayOfParticipanteDTO" />
 </xs:schema>

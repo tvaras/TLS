@@ -10,7 +10,9 @@ namespace TLS_Entidades
     {
         public int idParticipante { get; set; }
         public int idProyecto { get; set; }
+        public string nombreProyecto { get; set; }
         public int idUsuario { get; set; }
+        public string alias { get; set; }
         public int administrador { get; set; }
     }
 }

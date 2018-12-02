@@ -152,6 +152,7 @@
     <Content Include="Properties\DataSources\TLS_Entidades.ResultadoDTO.datasource" />
     <Content Include="Properties\DataSources\TLS_Entidades.ProyectoDTO.datasource" />
     <Content Include="Properties\DataSources\TLS_Entidades.UsuarioDTO.datasource" />
+    <Content Include="Properties\DataSources\TLS_Entidades.ParticipanteDTO.datasource" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="FRM_Login.aspx" />
     <Content Include="Proyectos.aspx" />

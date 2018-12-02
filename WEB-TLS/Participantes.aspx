@@ -27,7 +27,26 @@
         <asp:Label ID="lblIdProyecto" Visible="false" runat="server" ></asp:Label>
         <div class="row">
             <div class="form-group">
-                <label class="col-md-4" for="txtParticipantes">Participantes</label>
+                <h3>Proyecto: 
+                    <asp:Label ForeColor="Green" ID="lblNombreProyecto" runat="server" Text=""></asp:Label></h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <h4>Participantes Asignados</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <asp:ListBox CssClass="form-control" ID="lbAsignados" runat="server" SelectionMode="Single"></asp:ListBox>
+                <br/>
+                <asp:Button ID="btnEliminar" class="btn btn-primary" runat="server" Text="Quitar Asignación" OnClick="btnEliminar_Click" />
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="form-group">
+                <label class="col-md-4" for="txtParticipantes">Participantes Candidatos</label>
                 <asp:DropDownList ID="cbParticipantes" class="form-control col-md-8" runat="server" >
 
                 </asp:DropDownList>
@@ -39,6 +58,7 @@
                 <asp:CheckBox ID="chkAdmin" runat="server" CssClass="form-check-input col-md-8" />
             </div>
         </div>
+        <br />
         <div class="row">
             <div class="form-group">
                 <asp:Button ID="btnConfirmar" class="btn btn-primary" runat="server" Text="Asignar" OnClick="btnConfirmar_Click" />
